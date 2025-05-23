@@ -98,7 +98,7 @@ Badge (status):
 
 ## 🎥 Vídeo de Apresentação
 
-**[Assista à demonstração completa no YouTube]** https://youtu.be/yU62Dab2eeY](https://youtu.be/wO73SKRzDDU
+**[Assista à demonstração completa no YouTube]** https://youtu.be/wO73SKRzDDU
 
 ---
 
