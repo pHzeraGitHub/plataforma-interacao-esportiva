@@ -9,16 +9,11 @@
     "bootstrap": "^5.3.0",
     "react-scripts": "5.0.1"
   },
--  "scripts": {
--    "start": "react-scripts start",
--    "build": "react-scripts build"
--  },
-+  "scripts": {
-+    "start": "react-scripts start",
-+    "build": "react-scripts build",
-+    // Script usado pelo Vercel para produção:
-+    "vercel-build": "chmod +x node_modules/.bin/react-scripts && react-scripts build"
-+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "vercel-build": "chmod +x node_modules/.bin/react-scripts && react-scripts build"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
