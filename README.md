@@ -60,6 +60,9 @@ npm start
 ```dotenv
 REACT_APP_API_URL=http://localhost:8000/api/v2
 ```
+#### Tela (Login Padrão)
+Login: admin
+Senha: admin
 
 ---
 
@@ -112,4 +115,4 @@ Badge (status):
 
 ---
 
-Qualquer dúvida, abra uma issue ou entre em contato. Aproveite! 🚀
+Aproveite! 🚀
