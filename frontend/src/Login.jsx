@@ -1,3 +1,4 @@
+// src/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,23 +8,29 @@ export default function Login() {
   const [err, setErr] = useState('');
   const navigate = useNavigate();
 
- const API_BASE = process.env.REACT_APP_API_URL;
-if (!API_BASE) {
-  throw new Error('REACT_APP_API_URL não está definida!');
-}
-  console.log('LOGIN usando API_BASE:', API_BASE);
+  // URL da API v2 (deve terminar em "/api/v2")
+  const API_V2 = process.env.REACT_APP_API_URL;
+  if (!API_V2) {
+    throw new Error('REACT_APP_API_URL não está definida!');
+  }
+
+  // Base para autenticação: remove "/api/v2" de API_V2
+  const AUTH_BASE = API_V2.replace(/\/api\/v2\/?$/, '');
+  console.log('LOGIN usando AUTH_BASE:', AUTH_BASE);
 
   const handleSubmit = async e => {
     e.preventDefault();
     setErr('');
     try {
-      const res = await fetch(`${API_BASE}/api/token/`, {
+      const res = await fetch(`${AUTH_BASE}/api/token/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || 'Credenciais inválidas');
+
+      // salva tokens e redireciona
       localStorage.setItem('accessToken', data.access);
       localStorage.setItem('refreshToken', data.refresh);
       navigate('/', { replace: true });
