@@ -7,8 +7,10 @@ export default function Login() {
   const [err, setErr] = useState('');
   const navigate = useNavigate();
 
-  const API_BASE =
-    process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+ const API_BASE = process.env.REACT_APP_API_URL;
+if (!API_BASE) {
+  throw new Error('REACT_APP_API_URL não está definida!');
+}
   console.log('LOGIN usando API_BASE:', API_BASE);
 
   const handleSubmit = async e => {
