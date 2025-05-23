@@ -1,4 +1,4 @@
-![CI](https://github.com/SEU-USUARIO/plataforma-interacao-esportiva/actions/workflows/ci-cd.yml/badge.svg)
+![CI](https://github.com/pHzeraGitHub/plataforma-interacao-esportiva/actions/workflows/ci-cd.yml/badge.svg)
 # Plataforma de Interação Esportiva
 
 Projeto Integrado | Phillipe Martins da Silva
