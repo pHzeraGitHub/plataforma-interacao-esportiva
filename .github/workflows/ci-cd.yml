@@ -35,8 +35,14 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install & Build frontend
+      - name: Install dependencies
         working-directory: ./frontend
-        run: |
-          npm ci
-          npm run build
+        run: npm ci
+
+      - name: Fix react-scripts permission
+        working-directory: ./frontend
+        run: chmod +x node_modules/.bin/react-scripts
+
+      - name: Build frontend
+        working-directory: ./frontend
+        run: npm run build
